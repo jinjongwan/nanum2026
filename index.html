@@ -318,9 +318,9 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 10px}
   <div class="card">
     <h2>장소 안내 <span class="tag">순천만생태문화교육원</span></h2>
     <p class="sub" style="margin-bottom:12px">도면을 눌러 크게 볼 수 있습니다.</p>
-    <div class="floor"><h3>지상 2층 <span class="sub">공연장 · 회의실 1</span></h3><img id="imgF2" alt="2층 도면"><div class="rooms"><span>공연장 (등록·개회·토크쇼·주제 3)</span><span>회의실 1 (주제 1)</span></div></div>
+    <div class="floor"><h3>지상 2층 <span class="sub">공연장</span></h3><img id="imgF2" alt="2층 도면"><div class="rooms"><span>공연장 (등록·개회·토크쇼·주제 3)</span></div></div>
     <div class="floor"><h3>지상 1층 <span class="sub">다목적홀</span></h3><img id="imgF1" alt="1층 도면"><div class="rooms"><span>다목적홀 (실기 · 주제 8·9)</span></div></div>
-    <div class="floor"><h3>지하 1층 <span class="sub">회의실 2~6</span></h3><img id="imgB1" alt="지하1층 도면"><div class="rooms"><span>회의실 2 (주제 2)</span><span>회의실 3 (주제 4)</span><span>회의실 4 (주제 5)</span><span>회의실 5 (주제 6)</span><span>회의실 6 (주제 7)</span></div></div>
+    <div class="floor"><h3>지하 1층 <span class="sub">회의실 1~6</span></h3><img id="imgB1" alt="지하1층 도면"><div class="rooms"><span>회의실 1 (주제 1)</span><span>회의실 2 (주제 2)</span><span>회의실 3 (주제 7)</span><span>회의실 4 (주제 5)</span><span>회의실 5 (주제 6)</span><span>회의실 6 (주제 4)</span></div></div>
   </div>
 </section>
 
@@ -444,13 +444,13 @@ else document.getElementById('demoBar').style.display='block';
    ════════════════════════════════════════════════════════════ */
 const SESSIONS=[{n:1,t:"13:30~14:20",s:"13:30",e:"14:20"},{n:2,t:"14:30~15:20",s:"14:30",e:"15:20"},{n:3,t:"15:30~16:20",s:"15:30",e:"16:20"}];
 const DEFAULT_TOPICS=[
- {id:1,type:"이론",title:"건강운동 퀘스트 – 노션을 활용한 콘텐츠 기반 수업 설계와 실기",speaker:"진종완",org:"(전남) 전남외고",room:"지상 2층 회의실 1",floor:"f2",docUrl:"https://drive.google.com/file/d/1BdA9hmX2-Z5cVG77-rXcOsfgGtdG0W1Q/view"},
+ {id:1,type:"이론",title:"건강운동 퀘스트 – 노션을 활용한 콘텐츠 기반 수업 설계와 실기",speaker:"진종완",org:"(전남) 전남외고",room:"지하 1층 회의실 1",floor:"b1",docUrl:"https://drive.google.com/file/d/1BdA9hmX2-Z5cVG77-rXcOsfgGtdG0W1Q/view"},
  {id:2,type:"이론",title:"D.I.G. 뉴스포츠 활동을 통한 작은 학교 체육 활동 활성화 방안",speaker:"김회준",org:"(전남) 여남초",room:"지하 1층 회의실 2",floor:"b1",docUrl:"https://drive.google.com/file/d/1I32eWT86kufr7eOqwZ1WR_qzDoEjrEk4/view"},
  {id:3,type:"이론",title:"감에서 데이터로: 바이브 코딩을 활용한 배구 전술 모형과 디지털 체육대회 운영 사례",speaker:"임재철",org:"(서울) 중원중",room:"2층 공연장",floor:"f2",docUrl:"https://drive.google.com/file/d/1dpdGqMl6ZlLCV9FeymGlAIkzFacMS3bL/view"},
- {id:4,type:"이론",title:"여학생 체육 활성화를 위한 맞춤형 체육활동 운영 사례",speaker:"오현비",org:"(대구) 경상여고",room:"지하 1층 회의실 3",floor:"b1",docUrl:"https://drive.google.com/file/d/1xHblrSsFSzEUgOl5fLSi6CuD1kfbOcqh/view"},
+ {id:4,type:"이론",title:"여학생 체육 활성화를 위한 맞춤형 체육활동 운영 사례",speaker:"오현비",org:"(대구) 경상여고",room:"지하 1층 회의실 6",floor:"b1",docUrl:"https://drive.google.com/file/d/1xHblrSsFSzEUgOl5fLSi6CuD1kfbOcqh/view"},
  {id:5,type:"이론",title:"이기는 경험보다 성장하는 경험: 학교스포츠클럽 육성이야기",speaker:"박기홍",org:"(전남) 매성고",room:"지하 1층 회의실 4",floor:"b1",docUrl:"https://drive.google.com/file/d/1-FfdvMwD5tf0h-_qnB4vRhURrd0epgGN/view"},
  {id:6,type:"이론",title:"체육교사를 위한 서논술형 평가 길라잡이 – 과정중심 서논술형 평가 도구 개발 사례",speaker:"김동녘 · 이동호",org:"(전남) 순천금당중 · 진도국악고",room:"지하 1층 회의실 5",floor:"b1",docUrl:"https://drive.google.com/file/d/1zeRcyUrK1QSefP4Gdli68ykJPP0ED3tF/view"},
- {id:7,type:"이론",title:"체육시간이 편해지는 단단한 수업구조 만들기",speaker:"박준영",org:"(전남) 두원초",room:"지하 1층 회의실 6",floor:"b1",docUrl:"https://drive.google.com/file/d/1yXUAjCyuZS5v-lNJH1fCwLCd9Yo6QwMR/view"},
+ {id:7,type:"이론",title:"체육시간이 편해지는 단단한 수업구조 만들기",speaker:"박준영",org:"(전남) 두원초",room:"지하 1층 회의실 3",floor:"b1",docUrl:"https://drive.google.com/file/d/1yXUAjCyuZS5v-lNJH1fCwLCd9Yo6QwMR/view"},
  {id:8,type:"실기",title:"신나는 리듬트레이닝",speaker:"박만재",org:"라이프핏코칭연구소",room:"1층 다목적홀",floor:"f1",docUrl:"https://drive.google.com/file/d/19klSVDjCZDlDkaHN7Rzmp_Jd0KJcN3_2/view"},
  {id:9,type:"실기",title:"낯선 플래그풋볼로 낯설지 않는 체육수업 만들기",speaker:"이정현 · 김성균",org:"(전북) 운주중 · 군산동산중",room:"1층 다목적홀",floor:"f1",docUrl:"https://drive.google.com/file/d/17TyJcwTCdx_Bi3NTXG1CnUXIJ9RZiFjN/view"},
 ];
@@ -766,6 +766,7 @@ $("#btnExportP").addEventListener("click",()=>dlXlsx([["명단",P_ALL.map(p=>({�
 function matchTopic(v){
   if(v==null||v==="")return null;const s=String(v).trim();
   if(/^\d+$/.test(s)){const n=+s;return TOPICS.find(t=>t.id===n)?n:null;}
+  const lead=s.match(/^(\d)\s*[(（]/);if(lead&&topic(+lead[1]))return +lead[1];
   const m=s.match(/^\D*(\d)\D/);if(m&&s.length<6){const n=+m[1];if(topic(n))return n;}
   const ns=norm(s);const hit=TOPICS.find(t=>norm(t.title).includes(ns)||ns.includes(norm(t.title).slice(0,8))||norm(t.title).startsWith(ns.slice(0,6)));
   return hit?hit.id:null;
@@ -776,10 +777,14 @@ function parseXlsx(file){
   rd.onload=e=>{
     try{
       const wb=XLSX.read(e.target.result,{type:"array"});const ws=wb.Sheets[wb.SheetNames[0]];
-      const rows=XLSX.utils.sheet_to_json(ws,{defval:""});
+      const aoa=XLSX.utils.sheet_to_json(ws,{header:1,defval:""});
+      const hi=aoa.findIndex(r=>r.some(c=>/성명|이름/.test(String(c)))&&r.some(c=>/소속|학교/.test(String(c))));
+      if(hi<0)return toast(msg,"err","제목행(소속·성명)을 찾지 못했습니다.");
+      const header=aoa[hi].map(c=>String(c).trim());
+      const rows=aoa.slice(hi+1).filter(r=>r.some(c=>c!=="")).map(r=>{const o={};header.forEach((h,i)=>{if(h)o[h]=r[i]??"";});return o;});
       if(!rows.length)return toast(msg,"err","데이터가 없습니다.");
-      const cols=Object.keys(rows[0]);const find=re=>cols.find(c=>re.test(c.replace(/\s/g,"")));
-      const cS=find(/소속|학교|기관/),cN=find(/이름|성명/),cR=find(/직급|직위|구분/),cP=find(/연락처|전화|휴대/),c1=find(/1교시|1차|주제1|배정1/),c2=find(/2교시|2차|주제2|배정2/),c3=find(/3교시|3차|주제3|배정3/);
+      const cols=header.filter(Boolean);const find=re=>cols.find(c=>{const k=c.replace(/\s/g,"");return re.test(k)&&!/장소/.test(k);});
+      const cS=find(/소속|학교|기관/),cN=find(/이름|성명/),cR=find(/직급|직위|구분/),cP=find(/연락처|전화|휴대/),cG=find(/지역/),c1=find(/1교시|1회차|1차|주제1|배정1/),c2=find(/2교시|2회차|2차|주제2|배정2/),c3=find(/3교시|3회차|3차|주제3|배정3/);
       if(!cS||!cN||!c1)return toast(msg,"err",`필수 열을 찾지 못했습니다 (소속·이름·1교시). 현재 열: ${cols.join(", ")}`);
       const out=[],bad=[];
       rows.forEach((r,i)=>{
@@ -787,7 +792,8 @@ function parseXlsx(file){
         const s1=matchTopic(r[c1]),s2=c2?matchTopic(r[c2]):null,s3=c3?matchTopic(r[c3]):null;
         if(s1==null||(c2&&r[c2]!==""&&s2==null)||(c3&&r[c3]!==""&&s3==null))bad.push(`${i+2}행 ${school} ${name}: 주제 인식 실패 (${r[c1]}/${c2?r[c2]:""}/${c3?r[c3]:""})`);
         const phone=cP?String(r[cP]).replace(/\D/g,""):"";
-        out.push({key:pKey(school,name),school,name,role:cR?String(r[cR]).trim():"",phone4:phone.slice(-4),s1,s2,s3});
+        if(/강사/.test(String(r[c1])))return; // 강사 행은 참가자 명단에서 제외
+        out.push({key:pKey(school,name),school,name,role:cR?String(r[cR]).trim():"",region:cG?String(r[cG]).trim():"",phone4:phone.slice(-4),s1,s2,s3});
       });
       // 동명이인 key 충돌 → key에 직급/연락처 덧붙임
       const seen={};out.forEach(p=>{seen[p.key]=(seen[p.key]||0)+1;});
