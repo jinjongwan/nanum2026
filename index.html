@@ -41,11 +41,11 @@ header{background:linear-gradient(135deg,#25327B 0%,#1b4f96 50%,#006CAE 100%);co
 header::after{content:"";position:absolute;inset:auto -60px -120px auto;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(243,179,55,.5),transparent 65%);pointer-events:none}
 .brandbar{background:#fff;border-bottom:1px solid var(--line)}
 .brandbar .wrap{display:flex;align-items:center;justify-content:space-between;height:48px}
-.brandbar img{height:26px;display:block}
-.brandbar span{font-size:12px;font-weight:800;color:var(--navy);letter-spacing:.02em}
+.brandbar img{height:24px;max-width:76%;object-fit:contain;object-position:left;display:block}
+.brandbar span{font-size:12px;font-weight:800;color:var(--navy);letter-spacing:.02em;white-space:nowrap}
 .hero{padding:22px 0 20px;position:relative;z-index:1}
 .hero .kicker{font-size:12px;letter-spacing:.14em;opacity:.8;text-transform:uppercase}
-.hero h1{font-size:22px;font-weight:800;line-height:1.25;margin-top:6px}
+.hero h1{font-size:clamp(17px,5.3vw,26px);font-weight:800;line-height:1.25;margin-top:2px;white-space:nowrap}
 .hero h1 b{color:var(--yellow)}
 .hero .meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:13px;opacity:.92}
 .hero .meta span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--acc);margin:0 7px 2px 0}
@@ -219,7 +219,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 10px}
 <div class="brandbar"><div class="wrap"><img src="logo_h.png" alt="전남광주통합특별시교육청"><span>체육건강과</span></div></div>
 <header>
   <div class="wrap hero">
-    <h1>2026 전남광주<br>학교체육 <b>나눔 한마당</b></h1>
+    <h1>2026 전남광주 학교체육 <b>나눔 한마당</b></h1>
     <div class="meta"><span>11. 13.(금) 9:40~16:20</span><span>순천만생태문화교육원</span></div>
     <div class="badge-live" id="liveBadge" style="display:none"><i></i>LIVE · 행사 진행 중</div>
   </div>
