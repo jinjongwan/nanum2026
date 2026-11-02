@@ -68,7 +68,7 @@ section.page.on{display:block}
 /* forms */
 .field{margin-bottom:12px;position:relative}
 .field label{display:block;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:6px}
-.field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;outline:none;transition:.15s}
+.field input,.field select,.field textarea{width:100%;padding:14px 14px;font-size:17px;border:1.5px solid var(--line);border-radius:12px;background:#fff;outline:none;transition:.15s}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--pri-2);box-shadow:0 0 0 3px rgba(23,132,106,.15)}
 .ac{position:absolute;left:0;right:0;top:100%;z-index:30;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);max-height:220px;overflow:auto;display:none}
 .ac div{padding:11px 14px;border-bottom:1px solid var(--line);font-size:15px}
@@ -98,9 +98,10 @@ section.page.on{display:block}
 .sess .no span{font-size:11px;color:var(--muted);font-weight:700}
 .sess .body{flex:1;min-width:0}
 .sess .time{font-size:12px;font-weight:800;color:var(--muted)}
-.sess .title{font-weight:800;font-size:15px;line-height:1.35;margin:3px 0 4px}
+.sess .title{font-weight:800;font-size:16px;line-height:1.4;margin:4px 0 4px}
 .sess .who{font-size:13px;color:var(--muted)}
-.sess .room{display:inline-flex;align-items:center;gap:4px;margin-top:6px;font-size:13px;font-weight:800;color:#8a4410;background:var(--acc-soft);padding:4px 10px;border-radius:999px}
+.sess .room{display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-size:16px;font-weight:900;color:#fff;background:var(--acc);padding:7px 14px;border-radius:12px;letter-spacing:-.2px}
+.sess .room.b1{background:#2d4c9a}.sess .room.f2{background:var(--pri-2)}
 .sess.now{background:linear-gradient(90deg,var(--pri-soft),transparent);margin:0 -18px;padding:14px 18px;border-radius:12px}
 .sess.done{opacity:.55}
 .sess .acts{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
@@ -180,7 +181,7 @@ th{font-size:12px;color:var(--muted);font-weight:800;background:#fafbfa;white-sp
 /* bottom tab (mobile) */
 .tabbar{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:6px 0 calc(6px + env(safe-area-inset-bottom))}
 .tabbar .in{max-width:720px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
-.tabbar button{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:700;color:var(--muted);padding:4px 0}
+.tabbar button{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;font-weight:700;color:var(--muted);padding:4px 0}
 .tabbar button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .tabbar button.on{color:var(--pri)}
 footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 10px}
@@ -241,6 +242,9 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 10px}
     <div class="msg" id="lookupMsg"></div>
   </div>
 
+  <div class="card" id="homeMe" style="display:none;background:var(--pri);color:#fff;border:0">
+    <div class="row"><div class="grow"><div style="font-size:12px;opacity:.8;font-weight:800">이미 조회하셨어요</div><div style="font-size:18px;font-weight:900" id="homeMeName"></div></div><button class="btn acc sm" onclick="go('my')">내 배정표 →</button></div>
+  </div>
   <div class="card" id="noticeCard" style="display:none">
     <h2>공지사항</h2>
     <div id="noticeList"></div>
@@ -254,7 +258,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 10px}
   <div class="card">
     <h2>행사 안내</h2>
     <ul style="padding-left:18px;font-size:14px;color:#334">
-      <li>친환경 운영으로 <b>인쇄 교재를 배부하지 않습니다.</b> 강의원고는 각 강의실 앞 QR 또는 이 앱의 <a href="#topics">주제별 나눔활동</a>에서 확인하세요.</li>
+      <li>친환경 운영으로 <b>인쇄 교재를 배부하지 않습니다.</b> 강의원고는 각 강의실 앞 QR 또는 이 앱의 <a href="#topics">주제별 원고</a>에서 확인하세요.</li>
       <li>휴대전화·노트북·태블릿을 지참해 강의 원고를 활용하시기 바랍니다.</li>
       <li>주제별 나눔활동은 희망 4개 중 3개 배정, 초과 신청 시 무작위 추첨으로 배정되었습니다.</li>
       <li>행사 종료 후 강의별 등록 결과가 소속교로 송부됩니다. 폐회 시 만족도 조사에 참여해 주세요.</li>
@@ -293,8 +297,8 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 10px}
 <!-- ───────── 주제별 나눔활동 ───────── -->
 <section class="page" id="p-topics">
   <div class="card">
-    <h2>주제별 나눔활동 <span class="tag">9개 주제</span></h2>
-    <p class="sub" style="margin-bottom:6px">체육수업 및 현장이야기 · 13:30 / 14:30 / 15:30 (각 50분)</p>
+    <h2>주제별 원고 <span class="tag">9개 주제</span></h2>
+    <p class="sub" style="margin-bottom:6px">주제를 누르면 강의원고를 바로 볼 수 있습니다 · 13:30 / 14:30 / 15:30 (각 50분)</p>
     <div id="topicList"></div>
   </div>
 </section>
@@ -434,10 +438,11 @@ const firebaseConfig = {
   appId: "1:864977301780:web:c08ee86fe205d2274a9201"
 };
 const EVENT_DATE = "2026-11-13";          // 행사일 (LIVE 배지·현재 교시 안내 기준)
-const IS_DEMO = !firebaseConfig.apiKey || firebaseConfig.apiKey.startsWith("YOUR");
+const SDK_OK = typeof firebase!=="undefined";
+const IS_DEMO = !SDK_OK || !firebaseConfig.apiKey || firebaseConfig.apiKey.startsWith("YOUR");
 let db=null, auth=null;
 if(!IS_DEMO){ firebase.initializeApp(firebaseConfig); db=firebase.firestore(); auth=firebase.auth(); }
-else document.getElementById('demoBar').style.display='block';
+else { const bar=document.getElementById('demoBar'); bar.style.display='block'; if(!SDK_OK) bar.textContent='⚠ 네트워크 연결이 불안정해 서버에 접속하지 못했습니다. 잠시 후 새로고침해 주세요.'; }
 
 /* ════════════════════════════════════════════════════════════
    1. 기본 데이터 (주제·일정) — 공문 기준
@@ -508,7 +513,7 @@ function driveEmbed(url){ // 구글드라이브 링크 → 미리보기 URL
 /* ════════════════════════════════════════════════════════════
    3. 라우팅 (hash) — #home #my #topics #t3 #schedule #map #survey #admin
    ════════════════════════════════════════════════════════════ */
-const NAV=[["home","홈"],["my","내 배정표"],["topics","주제별 나눔"],["schedule","일정"],["map","장소"],["survey","설문"]];
+const NAV=[["home","홈"],["my","내 배정표"],["topics","주제별 원고"],["schedule","일정"],["map","장소"],["survey","설문"]];
 const ICONS={home:'<svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>',my:'<svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>',topics:'<svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>',schedule:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',map:'<svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>'};
 $("#navTop").innerHTML=NAV.map(([k,l])=>`<button data-go="${k}">${l}</button>`).join("")+`<button data-go="admin">⚙</button>`;
 $("#tabbar").innerHTML=NAV.filter(([k])=>k!=="survey").map(([k,l])=>`<button data-go="${k}">${ICONS[k]}${l}</button>`).join("");
@@ -630,7 +635,7 @@ function renderNowbar(){
   $("#liveBadge").style.display=isEventDay()?"inline-flex":"none";
 }
 function renderMy(){
-  const has=!!ME;$("#myEmpty").style.display=has?"none":"block";$("#myCard").style.display=has?"block":"none";$("#myCommon").style.display=has?"block":"none";
+  const has=!!ME;$("#homeMe").style.display=has?"block":"none";if(has)$("#homeMeName").textContent=`${ME.name} · ${ME.school}`;$("#myEmpty").style.display=has?"none":"block";$("#myCard").style.display=has?"block":"none";$("#myCommon").style.display=has?"block":"none";
   if(!has)return;
   $("#myName").innerHTML=`${esc(ME.name)} <small>${esc(ME.school)}</small>`;
   $("#myRole").textContent=(ME.role?ME.role+" · ":"")+"주제별 나눔활동 배정 결과";
@@ -643,7 +648,7 @@ function renderMy(){
       <div class="time">${s.t} ${state==="now"?'<span class="chip p">진행 중</span>':""}</div>
       <div class="title"><span class="chip ${t.type==="실기"?"p":"t"}">${t.type}</span> ${esc(t.title)}</div>
       <div class="who">${esc(t.speaker)} · ${esc(t.org)}</div>
-      <span class="room">📍 ${esc(t.room)}</span>
+      <span class="room ${t.floor}">📍 ${esc(t.room)}</span>
       <div class="acts"><a class="btn sm light" href="#t${t.id}">강의원고·상세</a><button class="btn sm light" onclick="go('map')">도면</button></div>
     </div></div>`;
   }).join("");
@@ -654,7 +659,7 @@ function renderMy(){
    ════════════════════════════════════════════════════════════ */
 function renderTopics(){
   $("#topicList").innerHTML=TOPICS.map(t=>`<div class="topic ${t.type==="실기"?"prac":""}" onclick="location.hash='t${t.id}'">
-    <div class="idx num">${t.id}</div><div class="grow"><div class="t">${esc(t.title)}</div><div class="d">${t.type} · ${esc(t.speaker)} (${esc(t.org)}) · ${esc(t.room)}${t.docUrl?' · 📄':''}</div></div></div>`).join("");
+    <div class="idx num">${t.id}</div><div class="grow"><div class="t">${esc(t.title)}</div><div class="d">${t.type} · ${esc(t.speaker)} (${esc(t.org)}) · <b>${esc(t.room)}</b></div>${t.docUrl?`<div class="acts" style="margin-top:6px"><a class="btn sm light" href="${esc(t.docUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📄 원고 보기</a></div>`:''}</div></div>`).join("");
 }
 function renderTopicDetail(id){
   const t=topic(id);const el=$("#topicDetail");
@@ -679,7 +684,7 @@ function renderSchedule(){
   const cur=currentSlot();
   const mk=x=>`<div class="it ${cur===x?"now":""}"><div class="tm">${x.s}~${x.e}</div><div class="tt">${esc(x.t)}</div><div class="ds">${esc(x.d)}</div></div>`;
   $("#fullTl").innerHTML=SCHEDULE.map(mk).join("");
-  $("#homeTl").innerHTML=SCHEDULE.filter(x=>[0,3,4,5,8].includes(SCHEDULE.indexOf(x))).map(mk).join("");
+  $("#homeTl").innerHTML=SCHEDULE.filter(x=>[0,3,4,5,6,7,8].includes(SCHEDULE.indexOf(x))).map(mk).join("");
 }
 function renderMap(){["b1","f1","f2"].forEach(k=>{const im=$("#img"+k.toUpperCase());im.src=FLOOR_IMG[k];im.onclick=()=>window.open(FLOOR_IMG[k]);});}
 
@@ -867,7 +872,7 @@ $("#btnSvXlsx").addEventListener("click",()=>dlXlsx([["응답",SURVEYS.map(s=>({
    ════════════════════════════════════════════════════════════ */
 (async function boot(){
   try{const m=localStorage.getItem("nanum_me");if(m)ME=JSON.parse(m);}catch(_){}
-  renderSchedule();renderMap();renderTopics();renderNowbar();
+  renderSchedule();renderMap();renderTopics();renderNowbar();renderMy();
   route();
   await loadMeta();renderTopics();
   if(location.hash.match(/^#t\d+$/))route();
