@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>2026 전남광주 학교체육 나눔 한마당</title>
 <meta name="description" content="2026. 11. 13.(금) 순천만생태문화교육원 · 내 배정 강의 조회, 강의원고, 일정·장소 안내">
-<meta name="theme-color" content="#0f5c4a">
+<meta name="theme-color" content="#25327B">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
@@ -21,7 +23,7 @@
 <style>
 :root{
   --bg:#f4f6f3; --card:#ffffff; --line:#e3e8e2; --ink:#14201b; --muted:#5f6d66;
-  --pri:#0f5c4a; --pri-2:#17846a; --pri-soft:#e3f1ec; --acc:#f27d26; --acc-soft:#fdebdc;
+  --pri:#006CAE; --pri-2:#258E46; --navy:#25327B; --pri-soft:#e6f1f9; --acc:#E25026; --acc-soft:#fde7e0; --green:#258E46; --yellow:#F3B337;
   --danger:#c9302c; --ok:#1b8f5a; --radius:18px; --shadow:0 6px 24px rgba(20,32,27,.07);
   --font:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,system-ui,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
 }
@@ -35,12 +37,16 @@ input,select,textarea{font-family:inherit;font-size:16px;color:inherit}
 .num{font-family:Anton,Impact,sans-serif;letter-spacing:.5px}
 
 /* header / hero */
-header{background:linear-gradient(135deg,#0b4a3b 0%,#0f5c4a 55%,#1b7a63 100%);color:#fff;position:relative;overflow:hidden}
-header::after{content:"";position:absolute;inset:auto -60px -120px auto;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(242,125,38,.55),transparent 65%);pointer-events:none}
+header{background:linear-gradient(135deg,#25327B 0%,#1b4f96 50%,#006CAE 100%);color:#fff;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;inset:auto -60px -120px auto;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(243,179,55,.5),transparent 65%);pointer-events:none}
+.brandbar{background:#fff;border-bottom:1px solid var(--line)}
+.brandbar .wrap{display:flex;align-items:center;justify-content:space-between;height:48px}
+.brandbar img{height:26px;display:block}
+.brandbar span{font-size:12px;font-weight:800;color:var(--navy);letter-spacing:.02em}
 .hero{padding:22px 0 20px;position:relative;z-index:1}
 .hero .kicker{font-size:12px;letter-spacing:.14em;opacity:.8;text-transform:uppercase}
 .hero h1{font-size:22px;font-weight:800;line-height:1.25;margin-top:6px}
-.hero h1 b{color:#ffd9bd}
+.hero h1 b{color:var(--yellow)}
 .hero .meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:13px;opacity:.92}
 .hero .meta span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--acc);margin:0 7px 2px 0}
 .badge-live{display:inline-flex;align-items:center;gap:6px;background:var(--acc);color:#fff;font-weight:800;font-size:12px;padding:4px 10px;border-radius:999px;margin-top:12px}
@@ -101,15 +107,15 @@ section.page.on{display:block}
 .sess .title{font-weight:800;font-size:16px;line-height:1.4;margin:4px 0 4px}
 .sess .who{font-size:13px;color:var(--muted)}
 .sess .room{display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-size:16px;font-weight:900;color:#fff;background:var(--acc);padding:7px 14px;border-radius:12px;letter-spacing:-.2px}
-.sess .room.b1{background:#2d4c9a}.sess .room.f2{background:var(--pri-2)}
+.sess .room.b1{background:var(--green)}.sess .room.f2{background:var(--navy)}
 .sess.now{background:linear-gradient(90deg,var(--pri-soft),transparent);margin:0 -18px;padding:14px 18px;border-radius:12px}
 .sess.done{opacity:.55}
 .sess .acts{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
 .chip{font-size:11px;font-weight:800;padding:3px 8px;border-radius:999px}
-.chip.t{background:#e7edf9;color:#2d4c9a}
+.chip.t{background:var(--pri-soft);color:var(--pri)}
 .chip.p{background:var(--acc-soft);color:#9a4a0e}
-.nowbar{background:var(--ink);color:#fff;border-radius:14px;padding:12px 16px;display:flex;gap:12px;align-items:center;margin-bottom:14px}
-.nowbar b{color:#ffd9bd}
+.nowbar{background:var(--navy);color:#fff;border-radius:14px;padding:12px 16px;display:flex;gap:12px;align-items:center;margin-bottom:14px}
+.nowbar b{color:var(--yellow)}
 
 /* topics */
 .topic{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--line);cursor:pointer}
@@ -155,7 +161,7 @@ section.page.on{display:block}
 /* admin */
 .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
 .tabs button{padding:8px 12px;border-radius:999px;font-weight:700;font-size:13px;background:#fff;border:1px solid var(--line);color:var(--muted)}
-.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tabs button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
 .apane{display:none}.apane.on{display:block}
 table{width:100%;border-collapse:collapse;font-size:13px}
 th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
@@ -210,9 +216,10 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 10px}
 
 <div class="demo-bar" id="demoBar" style="display:none">⚠ 데모 모드 — Firebase 설정 전이라 샘플 데이터로 동작합니다 (저장되지 않음)</div>
 
+<div class="brandbar"><div class="wrap"><img src="logo_h.png" alt="전남광주통합특별시교육청"><span>체육건강과</span></div></div>
 <header>
   <div class="wrap hero">
-    <div class="kicker">전남광주통합특별시교육청 체육건강과</div>
+    <div class="kicker">학교체육 교사 연찬회</div>
     <h1>2026 전남광주<br>학교체육 <b>나눔 한마당</b></h1>
     <div class="meta"><span>11. 13.(금) 9:40~16:20</span><span>순천만생태문화교육원</span></div>
     <div class="badge-live" id="liveBadge" style="display:none"><i></i>LIVE · 행사 진행 중</div>
@@ -242,7 +249,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 10px}
     <div class="msg" id="lookupMsg"></div>
   </div>
 
-  <div class="card" id="homeMe" style="display:none;background:var(--pri);color:#fff;border:0">
+  <div class="card" id="homeMe" style="display:none;background:var(--navy);color:#fff;border:0">
     <div class="row"><div class="grow"><div style="font-size:12px;opacity:.8;font-weight:800">이미 조회하셨어요</div><div style="font-size:18px;font-weight:900" id="homeMeName"></div></div><button class="btn acc sm" onclick="go('my')">내 배정표 →</button></div>
   </div>
   <div class="card" id="noticeCard" style="display:none">
@@ -410,7 +417,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 10px}
   </div>
 </section>
 
-<footer>© 2026 전남광주통합특별시교육청 체육건강과</footer>
+<footer><img src="logo_s.png" alt="" style="height:54px;display:block;margin:0 auto 8px;opacity:.9">© 2026 전남광주통합특별시교육청 체육건강과</footer>
 </main>
 
 <div class="tabbar"><div class="in" id="tabbar"></div></div>
@@ -810,7 +817,7 @@ $("#btnSaveLinks").addEventListener("click",async()=>{
 /* QR 포스터 */
 $("#btnMakeQr").addEventListener("click",()=>{
   const base=location.origin+location.pathname;
-  $("#posters").innerHTML=TOPICS.map(t=>`<div class="poster"><div class="chip ${t.type==="실기"?"p":"t"}" style="font-size:14px">${t.type} · 주제 ${t.id}</div><div class="ptitle">${esc(t.title)}</div><div class="pmeta">${esc(t.who)}<br>📍 ${esc(t.room)}</div><div class="qr" id="qr${t.id}"></div><div class="pmeta">QR을 스캔하면 강의원고를 바로 볼 수 있습니다</div><div class="url">${base}#t${t.id}</div></div>`).join("");
+  $("#posters").innerHTML=TOPICS.map(t=>`<div class="poster"><img src="logo_h.png" alt="" style="height:28px;margin:0 auto 14px;display:block"><div class="chip ${t.type==="실기"?"p":"t"}" style="font-size:14px">${t.type} · 주제 ${t.id}</div><div class="ptitle">${esc(t.title)}</div><div class="pmeta">${esc(t.who)}<br>📍 ${esc(t.room)}</div><div class="qr" id="qr${t.id}"></div><div class="pmeta">QR을 스캔하면 강의원고를 바로 볼 수 있습니다</div><div class="url">${base}#t${t.id}</div></div>`).join("");
   TOPICS.forEach(t=>new QRCode(document.getElementById("qr"+t.id),{text:`${base}#t${t.id}`,width:220,height:220,correctLevel:QRCode.CorrectLevel.M}));
 });
 
