@@ -410,7 +410,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 10px}
   </div>
 </section>
 
-<footer>© 2026 전남광주통합특별시교육청 체육건강과 · 담당 이용석 장학사</footer>
+<footer>© 2026 전남광주통합특별시교육청 체육건강과</footer>
 </main>
 
 <div class="tabbar"><div class="in" id="tabbar"></div></div>
@@ -439,15 +439,15 @@ else { const bar=document.getElementById('demoBar'); bar.style.display='block'; 
    ════════════════════════════════════════════════════════════ */
 const SESSIONS=[{n:1,t:"13:30~14:20",s:"13:30",e:"14:20"},{n:2,t:"14:30~15:20",s:"14:30",e:"15:20"},{n:3,t:"15:30~16:20",s:"15:30",e:"16:20"}];
 const DEFAULT_TOPICS=[
- {id:1,type:"이론",title:"건강운동 퀘스트 – 노션을 활용한 콘텐츠 기반 수업 설계와 실기",speaker:"진종완",org:"(전남) 전남외고",room:"지하 1층 회의실 1",floor:"b1",docUrl:"https://drive.google.com/file/d/1BdA9hmX2-Z5cVG77-rXcOsfgGtdG0W1Q/view"},
- {id:2,type:"이론",title:"D.I.G. 뉴스포츠 활동을 통한 작은 학교 체육 활동 활성화 방안",speaker:"김회준",org:"(전남) 여남초",room:"지하 1층 회의실 2",floor:"b1",docUrl:"https://drive.google.com/file/d/1I32eWT86kufr7eOqwZ1WR_qzDoEjrEk4/view"},
- {id:3,type:"이론",title:"감에서 데이터로: 바이브 코딩을 활용한 배구 전술 모형과 디지털 체육대회 운영 사례",speaker:"임재철",org:"(서울) 중원중",room:"2층 공연장",floor:"f2",docUrl:"https://drive.google.com/file/d/1dpdGqMl6ZlLCV9FeymGlAIkzFacMS3bL/view"},
- {id:4,type:"이론",title:"여학생 체육 활성화를 위한 맞춤형 체육활동 운영 사례",speaker:"오현비",org:"(대구) 경상여고",room:"지하 1층 회의실 6",floor:"b1",docUrl:"https://drive.google.com/file/d/1xHblrSsFSzEUgOl5fLSi6CuD1kfbOcqh/view"},
- {id:5,type:"이론",title:"이기는 경험보다 성장하는 경험: 학교스포츠클럽 육성이야기",speaker:"박기홍",org:"(전남) 매성고",room:"지하 1층 회의실 4",floor:"b1",docUrl:"https://drive.google.com/file/d/1-FfdvMwD5tf0h-_qnB4vRhURrd0epgGN/view"},
- {id:6,type:"이론",title:"체육교사를 위한 서논술형 평가 길라잡이 – 과정중심 서논술형 평가 도구 개발 사례",speaker:"김동녘 · 이동호",org:"(전남) 순천금당중 · 진도국악고",room:"지하 1층 회의실 5",floor:"b1",docUrl:"https://drive.google.com/file/d/1zeRcyUrK1QSefP4Gdli68ykJPP0ED3tF/view"},
- {id:7,type:"이론",title:"체육시간이 편해지는 단단한 수업구조 만들기",speaker:"박준영",org:"(전남) 두원초",room:"지하 1층 회의실 3",floor:"b1",docUrl:"https://drive.google.com/file/d/1yXUAjCyuZS5v-lNJH1fCwLCd9Yo6QwMR/view"},
- {id:8,type:"실기",title:"신나는 리듬트레이닝",speaker:"박만재",org:"라이프핏코칭연구소",room:"1층 다목적홀",floor:"f1",docUrl:"https://drive.google.com/file/d/19klSVDjCZDlDkaHN7Rzmp_Jd0KJcN3_2/view"},
- {id:9,type:"실기",title:"낯선 플래그풋볼로 낯설지 않는 체육수업 만들기",speaker:"이정현 · 김성균",org:"(전북) 운주중 · 군산동산중",room:"1층 다목적홀",floor:"f1",docUrl:"https://drive.google.com/file/d/17TyJcwTCdx_Bi3NTXG1CnUXIJ9RZiFjN/view"},
+ {id:1,type:"이론",title:"건강운동 퀘스트 – 노션을 활용한 콘텐츠 기반 수업 설계와 실기",speaker:"진종완",org:"(전남) 전남외고",who:"전남외국어고 - 진종완",room:"지하 1층 회의실 1",floor:"b1",docUrl:"https://drive.google.com/file/d/1BdA9hmX2-Z5cVG77-rXcOsfgGtdG0W1Q/view"},
+ {id:2,type:"이론",title:"D.I.G. 뉴스포츠 활동을 통한 작은 학교 체육 활동 활성화 방안",speaker:"김회준",org:"(전남) 여남초",who:"여남초 - 김회준",room:"지하 1층 회의실 2",floor:"b1",docUrl:"https://drive.google.com/file/d/1I32eWT86kufr7eOqwZ1WR_qzDoEjrEk4/view"},
+ {id:3,type:"이론",title:"감에서 데이터로: 바이브 코딩을 활용한 배구 전술 모형과 디지털 체육대회 운영 사례",speaker:"임재철",org:"(서울) 중원중",who:"서울 중원중 - 임재철",room:"2층 공연장",floor:"f2",docUrl:"https://drive.google.com/file/d/1dpdGqMl6ZlLCV9FeymGlAIkzFacMS3bL/view"},
+ {id:4,type:"이론",title:"여학생 체육 활성화를 위한 맞춤형 체육활동 운영 사례",speaker:"오현비",org:"(대구) 경상여고",who:"대구 경상여고 - 오현비",room:"지하 1층 회의실 6",floor:"b1",docUrl:"https://drive.google.com/file/d/1xHblrSsFSzEUgOl5fLSi6CuD1kfbOcqh/view"},
+ {id:5,type:"이론",title:"이기는 경험보다 성장하는 경험: 학교스포츠클럽 육성이야기",speaker:"박기홍",org:"(전남) 매성고",who:"매성고 - 박기홍",room:"지하 1층 회의실 4",floor:"b1",docUrl:"https://drive.google.com/file/d/1-FfdvMwD5tf0h-_qnB4vRhURrd0epgGN/view"},
+ {id:6,type:"이론",title:"체육교사를 위한 서논술형 평가 길라잡이 – 과정중심 서논술형 평가 도구 개발 사례",speaker:"김동녘 · 이동호",org:"(전남) 순천금당중 · 진도국악고",who:"순천금당중 - 김동녘 · 진도국악고 - 이동호",room:"지하 1층 회의실 5",floor:"b1",docUrl:"https://drive.google.com/file/d/1zeRcyUrK1QSefP4Gdli68ykJPP0ED3tF/view"},
+ {id:7,type:"이론",title:"체육시간이 편해지는 단단한 수업구조 만들기",speaker:"박준영",org:"(전남) 두원초",who:"두원초 - 박준영",room:"지하 1층 회의실 3",floor:"b1",docUrl:"https://drive.google.com/file/d/1yXUAjCyuZS5v-lNJH1fCwLCd9Yo6QwMR/view"},
+ {id:8,type:"실기",title:"신나는 리듬트레이닝",speaker:"박만재",org:"라이프핏코칭연구소",who:"라이프핏코칭연구소 - 박만재",room:"1층 다목적홀",floor:"f1",docUrl:"https://drive.google.com/file/d/19klSVDjCZDlDkaHN7Rzmp_Jd0KJcN3_2/view"},
+ {id:9,type:"실기",title:"낯선 플래그풋볼로 낯설지 않는 체육수업 만들기",speaker:"이정현 · 김성균",org:"(전북) 운주중 · 군산동산중",who:"전북 운주중 - 이정현 · 군산동산중 - 김성균",room:"1층 다목적홀",floor:"f1",docUrl:"https://drive.google.com/file/d/17TyJcwTCdx_Bi3NTXG1CnUXIJ9RZiFjN/view"},
 ];
 const SCHEDULE=[
  {s:"09:40",e:"10:00",t:"등록",d:"2층 공연장"},
@@ -636,7 +636,7 @@ function renderMy(){
     return `<div class="sess ${state}"><div class="no"><b class="num">${s.n}</b><span>교시</span></div><div class="body">
       <div class="time">${s.t} ${state==="now"?'<span class="chip p">진행 중</span>':""}</div>
       <div class="title"><span class="chip ${t.type==="실기"?"p":"t"}">${t.type}</span> ${esc(t.title)}</div>
-      <div class="who">${esc(t.speaker)} · ${esc(t.org)}</div>
+      <div class="who">${esc(t.who)}</div>
       <span class="room ${t.floor}">📍 ${esc(t.room)}</span>
       <div class="acts"><a class="btn sm light" href="#t${t.id}">강의원고·상세</a><button class="btn sm light" onclick="go('map')">도면</button></div>
     </div></div>`;
@@ -648,7 +648,7 @@ function renderMy(){
    ════════════════════════════════════════════════════════════ */
 function renderTopics(){
   $("#topicList").innerHTML=TOPICS.map(t=>`<div class="topic ${t.type==="실기"?"prac":""}" onclick="location.hash='t${t.id}'">
-    <div class="idx num">${t.id}</div><div class="grow"><div class="t">${esc(t.title)}</div><div class="d">${t.type} · ${esc(t.speaker)} (${esc(t.org)}) · <b>${esc(t.room)}</b></div>${t.docUrl?`<div class="acts" style="margin-top:6px"><a class="btn sm light" href="${esc(t.docUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📄 원고 보기</a></div>`:''}</div></div>`).join("");
+    <div class="idx num">${t.id}</div><div class="grow"><div class="t">${esc(t.title)}</div><div class="d">${t.type} · ${esc(t.who)} · <b>${esc(t.room)}</b></div>${t.docUrl?`<div class="acts" style="margin-top:6px"><a class="btn sm light" href="${esc(t.docUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📄 원고 보기</a></div>`:''}</div></div>`).join("");
 }
 function renderTopicDetail(id){
   const t=topic(id);const el=$("#topicDetail");
@@ -658,7 +658,7 @@ function renderTopicDetail(id){
   el.innerHTML=`<div class="idx num" style="background:${t.type==="실기"?"var(--acc)":"var(--pri)"};color:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center">${t.id}</div>
     <h3>${esc(t.title)}</h3>
     ${mine?`<span class="chip p">내 ${mine.n}교시 · ${mine.t}</span>`:`<span class="chip t">${t.type}</span>`}
-    <dl class="kv"><dt>강사</dt><dd>${esc(t.speaker)} <span class="sub">(${esc(t.org)})</span></dd><dt>장소</dt><dd><b>${esc(t.room)}</b> <a href="#map" style="font-size:13px">도면 보기</a></dd><dt>운영</dt><dd>13:30 · 14:30 · 15:30 (각 50분, 3회 반복)</dd>${t.note?`<dt>안내</dt><dd>${esc(t.note)}</dd>`:""}</dl>
+    <dl class="kv"><dt>강사</dt><dd>${esc(t.who)}</dd><dt>장소</dt><dd><b>${esc(t.room)}</b> <a href="#map" style="font-size:13px">도면 보기</a></dd><dt>운영</dt><dd>13:30 · 14:30 · 15:30 (각 50분, 3회 반복)</dd>${t.note?`<dt>안내</dt><dd>${esc(t.note)}</dd>`:""}</dl>
     <div class="row" style="gap:8px;flex-wrap:wrap">
       ${t.docUrl?`<a class="btn" href="${esc(t.docUrl)}" target="_blank" rel="noopener">📄 강의원고 열기</a>`:`<span class="btn" style="background:#e6e9e6;color:var(--muted)">강의원고 준비 중</span>`}
       ${t.extraUrl?`<a class="btn ghost" href="${esc(t.extraUrl)}" target="_blank" rel="noopener">🔗 강사 제공 자료</a>`:""}
@@ -810,7 +810,7 @@ $("#btnSaveLinks").addEventListener("click",async()=>{
 /* QR 포스터 */
 $("#btnMakeQr").addEventListener("click",()=>{
   const base=location.origin+location.pathname;
-  $("#posters").innerHTML=TOPICS.map(t=>`<div class="poster"><div class="chip ${t.type==="실기"?"p":"t"}" style="font-size:14px">${t.type} · 주제 ${t.id}</div><div class="ptitle">${esc(t.title)}</div><div class="pmeta">${esc(t.speaker)} (${esc(t.org)})<br>📍 ${esc(t.room)}</div><div class="qr" id="qr${t.id}"></div><div class="pmeta">QR을 스캔하면 강의원고를 바로 볼 수 있습니다</div><div class="url">${base}#t${t.id}</div></div>`).join("");
+  $("#posters").innerHTML=TOPICS.map(t=>`<div class="poster"><div class="chip ${t.type==="실기"?"p":"t"}" style="font-size:14px">${t.type} · 주제 ${t.id}</div><div class="ptitle">${esc(t.title)}</div><div class="pmeta">${esc(t.who)}<br>📍 ${esc(t.room)}</div><div class="qr" id="qr${t.id}"></div><div class="pmeta">QR을 스캔하면 강의원고를 바로 볼 수 있습니다</div><div class="url">${base}#t${t.id}</div></div>`).join("");
   TOPICS.forEach(t=>new QRCode(document.getElementById("qr"+t.id),{text:`${base}#t${t.id}`,width:220,height:220,correctLevel:QRCode.CorrectLevel.M}));
 });
 
