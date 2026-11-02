@@ -332,16 +332,13 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 10px}
 <section class="page" id="p-survey">
   <div class="card">
     <h2>만족도 조사</h2>
-    <p class="sub">2027학년도 학교체육 활성화 방안 마련을 위한 설문입니다. 약 2분 소요됩니다.</p>
+    <p class="sub" style="margin-bottom:14px">2027학년도 학교체육 활성화 방안 마련을 위한 설문입니다. 폐회 전 꼭 참여해 주세요 (약 2분).</p>
+    <a class="btn block acc" href="https://forms.gle/TAiKYwtqFAVCbQpN7" target="_blank" rel="noopener">📝 설문 참여하기</a>
+    <p class="sub" style="margin-top:10px;text-align:center">버튼이 안 열리면 아래에서 바로 응답하실 수 있습니다.</p>
   </div>
-  <form class="card" id="surveyForm">
-    <div id="surveyQs"></div>
-    <div id="surveyTopics"></div>
-    <div class="q"><div class="qt">6. 연수 내용의 미래 지향성 (교사 마인드 제고, 비전 제시 등)</div><div class="field"><textarea name="q6" rows="3" placeholder="자유롭게 작성해 주세요"></textarea></div></div>
-    <div class="q"><div class="qt">7. 기타 의견 · 2027학년도 체육교육 정책 제안</div><div class="field"><textarea name="q7" rows="3" placeholder="자유롭게 작성해 주세요"></textarea></div></div>
-    <button class="btn block acc" type="submit">설문 제출</button>
-    <div class="msg" id="surveyMsg"></div>
-  </form>
+  <div class="card" style="padding:6px">
+    <iframe src="https://forms.gle/TAiKYwtqFAVCbQpN7" style="width:100%;height:80vh;border:0;border-radius:12px" loading="lazy">로드 중…</iframe>
+  </div>
 </section>
 
 <!-- ───────── 관리자 ───────── -->
@@ -356,11 +353,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 10px}
   <div id="adminBody" style="display:none">
     <div class="row noprint" style="margin-bottom:12px"><div class="grow sub">운영자: <b id="adWho"></b></div><button class="btn ghost sm" id="btnLogout">로그아웃</button></div>
     <div class="tabs noprint">
-      <button data-a="dash" class="on">현황</button><button data-a="upload">배정표 업로드</button><button data-a="links">강의원고 링크</button><button data-a="qr">QR 포스터</button><button data-a="notice">공지</button><button data-a="survey">설문 결과</button>
+      <button data-a="dash" class="on">현황</button><button data-a="upload">배정표 업로드</button><button data-a="links">강의원고 링크</button><button data-a="qr">QR 포스터</button><button data-a="notice">공지</button>
     </div>
 
     <div class="apane on" id="a-dash">
-      <div class="stat"><div><b id="stTotal">0</b><span>등록 참가자</span></div><div><b id="stLook">0</b><span>조회(출석) 인원</span></div><div><b id="stSurvey">0</b><span>설문 응답</span></div></div>
+      <div class="stat"><div><b id="stTotal">0</b><span>등록 참가자</span></div><div><b id="stLook">0</b><span>조회(출석) 인원</span></div><div><a href="https://forms.gle/TAiKYwtqFAVCbQpN7" target="_blank" rel="noopener" style="text-decoration:none"><b style="font-size:16px;line-height:26px">구글폼</b><span>설문 결과 보기</span></a></div></div>
       <div class="card"><h2>주제별 배정 인원</h2><div class="tblwrap"><table id="tblTopicCount"></table></div></div>
       <div class="card"><h2>조회 기록 <span class="tag" id="logCount"></span></h2>
         <div class="row" style="margin-bottom:8px"><input class="grow" id="logFilter" placeholder="소속/이름 검색" style="padding:9px 12px;border:1.5px solid var(--line);border-radius:10px"><button class="btn sm light" id="btnLogXlsx">엑셀</button></div>
@@ -410,13 +407,6 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 10px}
       </div>
     </div>
 
-    <div class="apane" id="a-survey">
-      <div class="card">
-        <h2>설문 응답 <span class="tag" id="svCount"></span></h2>
-        <div id="svSummary"></div>
-        <button class="btn sm light" id="btnSvXlsx" style="margin-top:10px">엑셀 다운로드</button>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -468,7 +458,7 @@ const SCHEDULE=[
  {s:"13:30",e:"14:20",t:"주제별 나눔활동 1교시",d:"체육수업 및 현장이야기 1 (배정 주제)",sess:1},
  {s:"14:30",e:"15:20",t:"주제별 나눔활동 2교시",d:"체육수업 및 현장이야기 2 (배정 주제)",sess:2},
  {s:"15:30",e:"16:20",t:"주제별 나눔활동 3교시",d:"체육수업 및 현장이야기 3 (배정 주제)",sess:3},
- {s:"16:20",e:"16:30",t:"폐회 · 만족도 조사",d:"앱의 설문 탭에서 참여"},
+ {s:"16:20",e:"16:30",t:"폐회 · 만족도 조사",d:"설문 탭 → 구글폼으로 참여"},
 ];
 const FLOORS={b1:"지하 1층",f1:"지상 1층",f2:"지상 2층"};
 const FLOOR_IMG={b1:"map_b1.jpg",f1:"map_f1.jpg",f2:"map_f2.jpg"};
@@ -527,7 +517,6 @@ function route(){
   $$("[data-go]").forEach(b=>b.classList.toggle("on",b.dataset.go===h||(h==="topic"&&b.dataset.go==="topics")));
   if(tid)renderTopicDetail(tid);
   if(h==="my")renderMy();
-  if(h==="survey")renderSurvey();
   window.scrollTo({top:0});
 }
 window.addEventListener("hashchange",route);
@@ -689,31 +678,9 @@ function renderSchedule(){
 function renderMap(){["b1","f1","f2"].forEach(k=>{const im=$("#img"+k.toUpperCase());im.src=FLOOR_IMG[k];im.onclick=()=>window.open(FLOOR_IMG[k]);});}
 
 /* ════════════════════════════════════════════════════════════
-   9. 설문
-   ════════════════════════════════════════════════════════════ */
-const SURVEY_Q=["연수운영(운영시기, 장소, 대상 등)에 대한 전반적인 만족도","강의 주제별 만족도 (아래 교시별로 응답)","연수 내용 및 운영에 대한 참신성","연수 내용과 학교현장(업무, 수업 등)의 부합성","연수 내용과 학교현장의 적용 가능성"];
-const SCALE=["매우불만족","불만족","보통","만족","매우만족"];
-const scaleHtml=name=>`<div class="scale">${SCALE.map((l,i)=>`<label><input type="radio" name="${name}" value="${i+1}" required><b class="num">${i+1}</b>${l}</label>`).join("")}</div>`;
-function renderSurvey(){
-  $("#surveyQs").innerHTML=SURVEY_Q.map((q,i)=>i===1?"":`<div class="q"><div class="qt">${i+1}. ${q}</div>${scaleHtml("q"+(i+1))}</div>`).join("");
-  const tHtml=SESSIONS.map(s=>{const t=ME?topic(ME["s"+s.n]):null;return `<div class="q"><div class="qt">2-${s.n}. ${s.n}교시 ${t?`「${esc(t.title)}」`:"(배정 주제)"} 만족도</div>${scaleHtml("t"+s.n)}</div>`;}).join("");
-  $("#surveyTopics").innerHTML=`<div class="q" style="border-top:0;padding-bottom:0"><div class="qt">2. 강의 주제별 만족도</div>${ME?"":'<p class="sub">홈에서 배정 조회를 하면 교시별 주제명이 표시됩니다.</p>'}</div>`+tHtml;
-}
-$("#surveyForm").addEventListener("submit",async e=>{
-  e.preventDefault();const fd=new FormData(e.target);const data={ts:Date.now()};
-  for(const [k,v] of fd.entries())data[k]=/^q[1-5]$|^t\d$/.test(k)?+v:v;
-  if(ME){data.school=ME.school;data.name=ME.name;data.s1=ME.s1;data.s2=ME.s2;data.s3=ME.s3;}
-  const msg=$("#surveyMsg");
-  try{
-    if(!IS_DEMO){const id=ME?(ME.key||pKey(ME.school,ME.name)):undefined;id?await db.collection("surveys").doc(id).set(data):await db.collection("surveys").add(data);}
-    toast(msg,"ok","제출되었습니다. 참여해 주셔서 감사합니다!");e.target.reset();
-  }catch(err){toast(msg,"err","제출 실패: "+err.message);}
-});
-
-/* ════════════════════════════════════════════════════════════
    10. 관리자
    ════════════════════════════════════════════════════════════ */
-let ADMIN=false, P_ALL=[], LOGS=[], SURVEYS=[];
+let ADMIN=false, P_ALL=[], LOGS=[];
 $("#btnLogin").addEventListener("click",async()=>{
   const email=$("#adEmail").value.trim(),pw=$("#adPw").value;const msg=$("#loginMsg");
   if(IS_DEMO){enterAdmin("demo@local");return;}
@@ -729,18 +696,16 @@ function enterAdmin(who){
 $$(".tabs button").forEach(b=>b.addEventListener("click",()=>{$$(".tabs button").forEach(x=>x.classList.toggle("on",x===b));$$(".apane").forEach(p=>p.classList.toggle("on",p.id==="a-"+b.dataset.a));}));
 
 async function loadAdminData(){
-  if(IS_DEMO){P_ALL=DEMO_PARTICIPANTS.map(p=>({...p,key:pKey(p.school,p.name)}));LOGS=[{school:"두원초",name:"박준영",ts:Date.now()-5e5},{school:"여수여고",name:"홍길동",ts:Date.now()-3e5}];SURVEYS=[{school:"두원초",name:"박준영",q1:5,q3:4,q4:5,q5:4,t1:5,t2:4,t3:5,q6:"좋았습니다",q7:"",ts:Date.now()}];renderDash();renderSurveyAdmin();return;}
+  if(IS_DEMO){P_ALL=DEMO_PARTICIPANTS.map(p=>({...p,key:pKey(p.school,p.name)}));LOGS=[{school:"두원초",name:"박준영",ts:Date.now()-5e5},{school:"여수여고",name:"홍길동",ts:Date.now()-3e5}];renderDash();return;}
   try{
     const ps=await db.collection("participants").get();P_ALL=ps.docs.map(d=>({...d.data(),_id:d.id}));
     db.collection("logs").orderBy("ts","desc").limit(2000).onSnapshot(s=>{LOGS=s.docs.map(d=>d.data());renderDash();});
-    db.collection("surveys").onSnapshot(s=>{SURVEYS=s.docs.map(d=>d.data());renderDash();renderSurveyAdmin();});
     renderDash();
   }catch(e){alert("데이터 로드 실패: "+e.message);}
 }
 function renderDash(){
   $("#stTotal").textContent=P_ALL.length;
   $("#stLook").textContent=new Set(LOGS.map(l=>l.key||pKey(l.school,l.name))).size;
-  $("#stSurvey").textContent=SURVEYS.length;
   const cnt=TOPICS.map(t=>({t,c:[1,2,3].map(n=>P_ALL.filter(p=>p["s"+n]==t.id).length)}));
   $("#tblTopicCount").innerHTML=`<tr><th>#</th><th>주제</th><th>1교시</th><th>2교시</th><th>3교시</th><th>합계</th></tr>`+cnt.map(({t,c})=>`<tr><td>${t.id}</td><td>${esc(t.title)}</td><td>${c[0]}</td><td>${c[1]}</td><td>${c[2]}</td><td><b>${c[0]+c[1]+c[2]}</b></td></tr>`).join("");
   renderLogs();
@@ -856,16 +821,6 @@ $("#btnNotice").addEventListener("click",async()=>{
   $("#ntText").value="";
 });
 async function delNotice(id){if(IS_DEMO){NOTICES.shift();renderNotices();return;}if(id&&confirm("삭제할까요?"))await db.collection("notices").doc(id).delete();}
-
-/* 설문 결과 */
-function renderSurveyAdmin(){
-  $("#svCount").textContent=SURVEYS.length+"명";
-  const avg=k=>{const v=SURVEYS.map(s=>+s[k]).filter(x=>x>0);return v.length?(v.reduce((a,b)=>a+b,0)/v.length).toFixed(2):"-";};
-  const tAvg=TOPICS.map(t=>{const v=[];SURVEYS.forEach(s=>[1,2,3].forEach(n=>{if(s["s"+n]==t.id&&s["t"+n])v.push(+s["t"+n]);}));return {t,n:v.length,a:v.length?(v.reduce((a,b)=>a+b,0)/v.length).toFixed(2):"-"};});
-  $("#svSummary").innerHTML=`<div class="tblwrap"><table><tr><th>문항</th><th>평균(5점)</th></tr>${[1,3,4,5].map(i=>`<tr><td>${i}. ${SURVEY_Q[i-1]}</td><td><b>${avg("q"+i)}</b></td></tr>`).join("")}</table></div>
-    <h2 style="margin-top:14px">주제별 만족도</h2><div class="tblwrap"><table><tr><th>#</th><th>주제</th><th>응답</th><th>평균</th></tr>${tAvg.map(x=>`<tr><td>${x.t.id}</td><td>${esc(x.t.title)}</td><td>${x.n}</td><td><b>${x.a}</b></td></tr>`).join("")}</table></div>`;
-}
-$("#btnSvXlsx").addEventListener("click",()=>dlXlsx([["응답",SURVEYS.map(s=>({제출:fmtTime(s.ts),소속:s.school||"",이름:s.name||"",'1.전반만족':s.q1,'2-1.1교시':s.t1,'2-2.2교시':s.t2,'2-3.3교시':s.t3,'3.참신성':s.q3,'4.부합성':s.q4,'5.적용가능성':s.q5,'6.미래지향성':s.q6||"",'7.기타':s.q7||"",'1교시주제':topic(s.s1)?.title||"",'2교시주제':topic(s.s2)?.title||"",'3교시주제':topic(s.s3)?.title||""}))]],"만족도조사_응답.xlsx"));
 
 /* ════════════════════════════════════════════════════════════
    11. BOOT
