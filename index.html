@@ -292,8 +292,9 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 10px}
     <h2>공통 일정</h2>
     <div class="tl">
       <div class="it"><div class="tm">9:40~10:00</div><div class="tt">등록</div><div class="ds">2층 공연장</div></div>
-      <div class="it"><div class="tm">10:00~10:30</div><div class="tt">개회 · 연구회/지원단 성과 공유</div><div class="ds">2층 공연장</div></div>
-      <div class="it"><div class="tm">10:30~12:00</div><div class="tt">이상준 토크쇼</div><div class="ds">현장 고민 나누기, 마음 회복 · 2층 공연장</div></div>
+      <div class="it"><div class="tm">10:00~10:10</div><div class="tt">개회</div><div class="ds">2층 공연장</div></div>
+      <div class="it"><div class="tm">10:10~10:30</div><div class="tt">2026 성과 공유</div><div class="ds">글로컬 체육교육 연구회(두원초 박준영) · 신체활동분석 지원단 초등(화순제일초 김성모) · 중등(순천제일고 김해인) · 2층 공연장</div></div>
+      <div class="it"><div class="tm">10:30~12:00</div><div class="tt">「이상준 토크쇼」</div><div class="ds">현장 고민 나누기, 마음 회복 등 · 개그맨 이상준 · 2층 공연장</div></div>
       <div class="it"><div class="tm">12:00~13:30</div><div class="tt">점심식사 (개별)</div></div>
       <div class="it"><div class="tm">16:20</div><div class="tt">폐회 · 만족도 조사</div></div>
     </div>
@@ -456,14 +457,16 @@ const DEFAULT_TOPICS=[
  {id:9,type:"실기",title:"낯선 플래그풋볼로 낯설지 않는 체육수업 만들기",speaker:"이정현 · 김성균",org:"(전북) 운주중 · 군산동산중",who:"전북 운주중 - 이정현 · 군산동산중 - 김성균",room:"1층 다목적홀",floor:"f1",docUrl:"https://drive.google.com/file/d/17TyJcwTCdx_Bi3NTXG1CnUXIJ9RZiFjN/view"},
 ];
 const SCHEDULE=[
- {s:"09:40",e:"10:00",t:"등록",d:"2층 공연장"},
- {s:"10:00",e:"10:10",t:"개회",d:"2층 공연장"},
- {s:"10:10",e:"10:30",t:"2026 성과 공유",d:"글로컬 체육교육 연구회(박준영) · 신체활동분석 지원단 초등(김성모)·중등(김해인)"},
- {s:"10:30",e:"12:00",t:"「이상준 토크쇼」",d:"전남광주 체육(담당)교사를 위한 현장 고민 나누기, 마음 회복 · 개그맨 이상준 · 2층 공연장"},
- {s:"12:00",e:"13:30",t:"점심식사",d:"개별 식사"},
- {s:"13:30",e:"14:20",t:"주제별 나눔활동 1교시",d:"체육수업 및 현장이야기 1 (배정 주제)",sess:1},
- {s:"14:30",e:"15:20",t:"주제별 나눔활동 2교시",d:"체육수업 및 현장이야기 2 (배정 주제)",sess:2},
- {s:"15:30",e:"16:20",t:"주제별 나눔활동 3교시",d:"체육수업 및 현장이야기 3 (배정 주제)",sess:3},
+ {s:"09:40",e:"10:00",t:"등록",d:"20분 · 2층 공연장"},
+ {s:"10:00",e:"10:10",t:"개회",d:"10분 · 2층 공연장"},
+ {s:"10:10",e:"10:20",t:"2026년 글로컬 체육교육 연구회 성과 공유",d:"두원초 교사 박준영 · 2층 공연장"},
+ {s:"10:20",e:"10:25",t:"2026년 신체활동분석 지원단 성과 공유 (초등)",d:"화순제일초 교사 김성모 · 2층 공연장"},
+ {s:"10:25",e:"10:30",t:"2026년 신체활동분석 지원단 성과 공유 (중등)",d:"순천제일고 교사 김해인 · 2층 공연장"},
+ {s:"10:30",e:"12:00",t:"전남광주 체육(담당)교사를 위한 「이상준 토크쇼」",d:"현장 고민 나누기, 마음 회복 등 · 개그맨 이상준 · 90분 · 2층 공연장"},
+ {s:"12:00",e:"13:30",t:"점심식사",d:"90분 · 개별식사"},
+ {s:"13:30",e:"14:20",t:"주제별 나눔활동 1교시",d:"체육수업 및 현장이야기 1 · 50분 · 배정 주제별 장소",sess:1},
+ {s:"14:30",e:"15:20",t:"주제별 나눔활동 2교시",d:"체육수업 및 현장이야기 2 · 50분 · 배정 주제별 장소",sess:2},
+ {s:"15:30",e:"16:20",t:"주제별 나눔활동 3교시",d:"체육수업 및 현장이야기 3 · 50분 · 배정 주제별 장소",sess:3},
  {s:"16:20",e:"16:30",t:"폐회 · 만족도 조사",d:"설문 탭 → 구글폼으로 참여"},
 ];
 const FLOORS={b1:"지하 1층",f1:"지상 1층",f2:"지상 2층"};
@@ -679,7 +682,7 @@ function renderSchedule(){
   const cur=currentSlot();
   const mk=x=>`<div class="it ${cur===x?"now":""}"><div class="tm">${x.s}~${x.e}</div><div class="tt">${esc(x.t)}</div><div class="ds">${esc(x.d)}</div></div>`;
   $("#fullTl").innerHTML=SCHEDULE.map(mk).join("");
-  $("#homeTl").innerHTML=SCHEDULE.filter(x=>[0,3,4,5,6,7,8].includes(SCHEDULE.indexOf(x))).map(mk).join("");
+  $("#homeTl").innerHTML=SCHEDULE.map(mk).join("");
 }
 function renderMap(){["b1","f1","f2"].forEach(k=>{const im=$("#img"+k.toUpperCase());im.src=FLOOR_IMG[k];im.onclick=()=>window.open(FLOOR_IMG[k]);});}
 
